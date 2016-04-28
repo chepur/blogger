@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
   include ArticlesHelper
 
   def index
-    @articles = Article.all
+    @articles = if params[:tag_id]
+                  Tag.find(params[:tag_id]).articles
+                else
+                  Article.all
+                end
   end
 
   def show

@@ -1,5 +1,13 @@
 <h1><%= @article.title %></h1>
 
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+
 <p><%= @article.body %></p>
 <div class="actions">
   <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "You sure?"} %>
