@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
+  before_filter :require_login, only: [:new, :create, :edit, :update]
 
   def index
     @articles = if params[:tag_id]

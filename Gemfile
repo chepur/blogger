@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem "paperclip"
+gem 'paperclip'
+gem 'sorcery'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
